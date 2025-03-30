@@ -1,62 +1,111 @@
-<p align="center">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
-  </a>
-</p>
+# Portfolio Kylian DEBONNE
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/bedrock">
-    <img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/bedrock?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
+## Description du projet
+Ce projet est un portfolio réalisé avec WordPress Bedrock. Il inclut un thème enfant basé sur **Kubio**, un Custom Post Type (CPT) "Portfolio", ainsi que des champs personnalisés gérés avec **ACF**.
 
-  <a href="https://packagist.org/packages/roots/wordpress">
-    <img alt="roots/wordpress Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/wordpress?label=roots%2Fwordpress%20downloads&logo=roots&logoColor=white&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
-  
-  <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/roots/bedrock/master/composer.json&label=wordpress&logo=roots&logoColor=white&query=$.require[%22roots/wordpress%22]&colorB=2b3072&colorA=525ddc&style=flat-square">
+---
 
-  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/bedrock/ci.yml?branch=master&logo=github&label=CI&style=flat-square">
-  </a>
+## Étapes réalisées
+### **1. Installation et Configuration**
+- Installation de WordPress avec **Roots/Bedrock**.
+- Gestion des dépendances avec **Composer**.
+- Choix du thème **Kubio** et création d'un **thème enfant**.
 
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square">
-  </a>
-</p>
+### **2. Création du Custom Post Type (CPT)**
+- Déclaration du CPT "Portfolio".
+- Ajout des supports : titre, éditeur, image mise en avant.
+- Configuration des permaliens et des catégories personnalisées.
 
-<p align="center">WordPress boilerplate with Composer, easier configuration, and an improved folder structure</p>
+### **3. Ajout des Champs Personnalisés avec ACF**
+- Installation et configuration d'**ACF** via Composer.
+- Création de champs : client, date, lien, galerie d'images.
+- Intégration de ces champs dans les templates.
 
-<p align="center">
-  <a href="https://roots.io/bedrock/">Website</a> &nbsp;&nbsp; <a href="https://roots.io/bedrock/docs/installation/">Documentation</a> &nbsp;&nbsp; <a href="https://github.com/roots/bedrock/releases">Releases</a> &nbsp;&nbsp; <a href="https://discourse.roots.io/">Community</a>
-</p>
+### **4. Affichage des Réalisations**
+- Création des fichiers **single-portfolio.php** et **archive-portfolio.php**.
+- Affichage dynamique des réalisations avec ACF.
+- Personnalisation du CSS du thème enfant.
 
-## Sponsors
+### **5. Gestion et Livraison du Projet**
+- Ajout d'un fichier **.gitignore** pour exclure les fichiers sensibles.
+- Hébergement du projet sur un **dépôt GitHub**.
+- Export des fichiers et de la base de données.
 
-Bedrock is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, please consider [sponsoring Roots](https://github.com/sponsors/roots).
+---
 
-<div align="center">
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://bonsai.so/"><img src="https://cdn.roots.io/app/uploads/bonsai.svg" alt="Bonsai" width="120" height="90"></a> <a href="https://fusepress.co/sp/sign-up/"><img src="https://cdn.roots.io/app/uploads/fusepress.svg" alt="FusePress" width="120" height="90"></a>
-</div>
+## Difficultés rencontrées et solutions
 
-## Overview
+### **1. Problème d'installation de Bedrock avec Composer**
+- **Erreur OpenSSL manquant** → Activation de l'extension PHP OpenSSL.
+- **Problème avec Composer** → Utilisation de `composer install` après correction.
 
-Bedrock is a WordPress boilerplate for developers that want to manage their projects with Git and Composer. Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology, including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+### **2. Erreur "No composer.json present" lors de l'installation de plugins**
+- Oubli d’exécuter la commande dans le bon dossier.
+- Vérification que Bedrock était bien installé.
 
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
-- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
+### **3. Problèmes d'accès à localhost et erreurs de chemins**
+- Mauvaise configuration des variables `WP_HOME` et `WP_SITEURL` dans `.env`.
+- Correction en ajustant les chemins dans `config/application.php`.
 
-## Getting Started
+### **4. Messages "Deprecated" liés à PHP 8.4 et Kubio**
+- Utilisation de `error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);` dans `wp-config.php`.
+- Désinstallation de Kubio lorsque les erreurs étaient trop nombreuses.
 
-See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
+### **5. Images et champs ACF non affichés**
+- Vérification de l’ajout du support `thumbnail` pour les CPT.
+- Vérification des appels `get_field()` dans les templates.
+- Ajout de `the_post_thumbnail()` pour l'affichage de l'image mise en avant.
 
-## Stay Connected
+---
 
-- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
-- Participate on [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
+## Installation et lancement du projet
+### **Prérequis**
+- PHP (>=8.0)
+- Composer
+- MySQL ou MariaDB
+- Un serveur local type **Local by Flywheel**, **MAMP**, **XAMPP**, ou **Laragon**.
+
+### **Installation**
+```sh
+# Cloner le projet
+git clone https://github.com/So1anum/Portfolio.git
+cd Portfolio_Kylian_DEBONNE
+
+# Installer les dépendances
+composer install
+
+# Configurer les variables d'environnement
+cp .env.example .env
+nano .env   # Modifier les accès à la base de données
+
+# Générer les clés de sécurité
+wp dotenv salts regenerate
+```
+
+### **Création de la base de données**
+Créer une base de données MySQL nommée `portfolio_debonne`.
+```sh
+mysql -u root -p -e "CREATE DATABASE portfolio_debonne;"
+```
+
+### **Lancer le serveur local**
+```sh
+wp server --host=localhost --port=8080
+```
+Accéder au site : [http://localhost:8080](http://localhost:8080)
+
+### **Importer la base de données**
+```sh
+mysql -u root -p portfolio_debonne < portfolio_debonne.sql
+```
+
+### **Finalisation**
+- Se connecter à l'admin : `/wp/wp-admin`
+- Configurer les permaliens.
+- Vérifier les fichiers envoyés (uploads non gérés par Git).
+
+---
+
+## Contact
+Si vous avez des questions, n’hésitez pas à me contacter via GitHub ! 😊
+
