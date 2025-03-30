@@ -1,0 +1,36 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/themes/twentytwentyfive/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+web/app/cache/*
+
+# WordPress
+web/wp
+web/.htaccess
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env
+
+# Composer
+/vendor
+auth.json
+
+# WP-CLI
+wp-cli.local.yml
+web/wp/wp-config.php
+
+web/app/uploads/  # Contient les images envoyées sur WP
+vendor/           # Contient les dépendances installées par Composer
+node_modules/     # Si tu utilises du JavaScript avec npm/yarn
+
+.DS_Store         # MacOS
+Thumbs.db         # Windows
