@@ -2,7 +2,7 @@
 
 ## Description du projet
 Ce projet est un portfolio réalisé avec WordPress Bedrock. Il inclut un thème enfant basé sur **Kubio**, un Custom Post Type (CPT) "Portfolio", ainsi que des champs personnalisés gérés avec **ACF**.
-
+https://github.com/So1anum/Portfolio/
 ---
 
 ## Étapes réalisées
